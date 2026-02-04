@@ -1275,8 +1275,8 @@ p {
    Testimonials Section
 ============================================ */
 .testimonials-section {
-  padding: var(--spacing-4xl) 0;
-  background: var(--bg-primary);
+  padding: var(--spacing-2xl) 0;
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 }
@@ -1317,31 +1317,33 @@ p {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-secondary);
   border-radius: var(--radius-xl);
-  padding: var(--spacing-2xl);
-  max-width: 700px;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  max-width: 650px;
   text-align: center;
 }
 
 .testimonial-content {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 .quote-mark {
   font-family: serif;
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1;
   background: var(--accent-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  opacity: 0.5;
+  opacity: 0.4;
+  margin-bottom: var(--spacing-sm);
 }
 
 .testimonial-text {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   color: var(--text-primary);
-  line-height: 1.8;
+  line-height: 1.7;
   font-style: italic;
+  margin-bottom: var(--spacing-md);
 }
 
 .testimonial-rating {
@@ -1417,7 +1419,7 @@ p {
   display: flex;
   justify-content: center;
   gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: 0;
 }
 
 .dot {
@@ -1442,7 +1444,9 @@ p {
 }
 
 .testimonial-grid-card {
-  background: var(--bg-card);
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border-secondary);
   border-radius: var(--radius-xl);
   padding: var(--spacing-xl);
@@ -1456,9 +1460,10 @@ p {
 
 .testimonial-grid-card .testimonial-text {
   font-size: var(--text-sm);
-  margin: var(--spacing-md) 0;
+  margin: var(--spacing-sm) 0 var(--spacing-md);
   font-style: normal;
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .testimonial-grid-card .testimonial-rating {

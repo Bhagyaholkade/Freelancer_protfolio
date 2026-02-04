@@ -14,7 +14,7 @@ const Testimonials = () => {
       name: 'Rahul Sharma',
       role: 'Computer Science Student',
       company: 'IIT Delhi',
-      content: 'DevBuild helped me complete my final year project on time. The code quality was excellent, and they explained everything so I could present it confidently. Highly recommend for any student struggling with their projects!',
+      content: 'Excellent code quality and clear explanations. Helped me ace my final year project presentation!',
       rating: 5,
       avatarUrl: null,
       projectType: 'academic'
@@ -24,7 +24,7 @@ const Testimonials = () => {
       name: 'Priya Patel',
       role: 'Startup Founder',
       company: 'TechStart',
-      content: 'We needed an MVP built quickly for our startup pitch. DevBuild delivered a fully functional full-stack application that impressed our investors. Professional, responsive, and great communication throughout.',
+      content: 'Delivered a fully functional MVP that impressed our investors. Professional and responsive!',
       rating: 5,
       avatarUrl: null,
       projectType: 'fullstack'
@@ -34,7 +34,7 @@ const Testimonials = () => {
       name: 'Arjun Mehta',
       role: 'Data Science Student',
       company: 'BITS Pilani',
-      content: 'The AI/ML project they built for me was beyond expectations. Not only did it work perfectly, but they also helped me understand the algorithms and prepare for my viva. Got the highest grade in my batch!',
+      content: 'Beyond expectations! They helped me understand the algorithms and got me the highest grade.',
       rating: 5,
       avatarUrl: null,
       projectType: 'aiml'
@@ -44,7 +44,7 @@ const Testimonials = () => {
       name: 'Sneha Reddy',
       role: 'Freelance Developer',
       company: 'Self-employed',
-      content: 'I outsourced a complex backend project to DevBuild when I was overloaded with work. They delivered clean, well-documented code that integrated seamlessly with the existing system. Will definitely work with them again!',
+      content: 'Clean, well-documented code that integrated seamlessly. Will definitely work with them again!',
       rating: 5,
       avatarUrl: null,
       projectType: 'backend'
@@ -54,7 +54,7 @@ const Testimonials = () => {
       name: 'Vikram Singh',
       role: 'MBA Student',
       company: 'ISB Hyderabad',
-      content: 'Needed a data visualization dashboard for my thesis. DevBuild created an interactive dashboard that made my research findings come alive. The presentation was a huge success thanks to their work.',
+      content: 'Created an interactive dashboard that made my thesis presentation a huge success!',
       rating: 5,
       avatarUrl: null,
       projectType: 'frontend'
@@ -134,11 +134,10 @@ const Testimonials = () => {
             <FiMessageSquare /> Testimonials
           </span>
           <h2 className="section-title">
-            What Our Clients<br />
-            <span className="text-gradient">Say About Us</span>
+            Client <span className="text-gradient">Success Stories</span>
           </h2>
           <p className="section-description">
-            Real feedback from students and professionals we've helped
+            Trusted by students and professionals worldwide
           </p>
         </div>
 
@@ -206,33 +205,6 @@ const Testimonials = () => {
               onClick={() => setCurrentIndex(index)}
               aria-label={`Go to testimonial ${index + 1}`}
             />
-          ))}
-        </div>
-
-        {/* All Testimonials Grid (Desktop) */}
-        <div className="testimonials-grid">
-          {displayTestimonials.slice(0, 3).map((testimonial) => (
-            <div key={testimonial.id} className="testimonial-grid-card">
-              <div className="testimonial-rating">
-                {renderStars(testimonial.rating)}
-              </div>
-              <p className="testimonial-text">"{testimonial.content}"</p>
-              <div className="testimonial-author">
-                <div className="author-avatar">
-                  {testimonial.avatarUrl ? (
-                    <img src={testimonial.avatarUrl} alt={testimonial.name} />
-                  ) : (
-                    <div className="avatar-placeholder">
-                      {getInitials(testimonial.name)}
-                    </div>
-                  )}
-                </div>
-                <div className="author-info">
-                  <h4>{testimonial.name}</h4>
-                  <p>{testimonial.role}</p>
-                </div>
-              </div>
-            </div>
           ))}
         </div>
       </div>
