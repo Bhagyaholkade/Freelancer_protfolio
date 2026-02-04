@@ -3,7 +3,7 @@ import {
   FiMail, FiPhone, FiMapPin, FiSend, FiCheck, FiAlertCircle,
   FiMessageCircle
 } from 'react-icons/fi';
-import { contactService } from '../services/api';
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,10 +34,12 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
-      const response = await contactService.submit(formData);
+      // MOCK SUBMISSION
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
       setStatus({
         type: 'success',
-        message: response.message || 'Thank you! We will get back to you soon.'
+        message: 'Thank you! We will get back to you soon.'
       });
       setFormData({
         name: '',
