@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   FiMail, FiPhone, FiMapPin, FiSend, FiCheck, FiAlertCircle,
-  FiMessageCircle, FiUsers, FiArrowRight
+  FiMessageCircle
 } from 'react-icons/fi';
 import { contactService } from '../services/api';
 
@@ -77,24 +77,7 @@ const Contact = () => {
     }
   ];
 
-  const faqs = [
-    {
-      question: 'How long does a typical project take?',
-      answer: 'Project timelines vary based on complexity. Simple projects may take a week, while complex full-stack applications may take longer. We\'ll provide a timeline after understanding your requirements.'
-    },
-    {
-      question: 'Do you provide source code?',
-      answer: 'Yes, you get complete ownership of all source code. We provide clean, well-documented code that you can modify and extend.'
-    },
-    {
-      question: 'What if I need changes after delivery?',
-      answer: 'We offer free bug fixes post-delivery. For additional features or changes, we can discuss a separate scope and timeline.'
-    },
-    {
-      question: 'Can you help with deployment?',
-      answer: 'Absolutely! We help deploy your project to your preferred platform (Vercel, Netlify, AWS, etc.) and provide documentation.'
-    }
-  ];
+
 
   return (
     <div className="contact-page">
@@ -251,29 +234,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="faq-section">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-eyebrow">
-              <FiUsers /> FAQ
-            </span>
-            <h2 className="section-title">
-              Frequently Asked<br />
-              <span className="text-gradient">Questions</span>
-            </h2>
-          </div>
-
-          <div className="faq-grid">
-            {faqs.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <h4 className="faq-question">{faq.question}</h4>
-                <p className="faq-answer">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
