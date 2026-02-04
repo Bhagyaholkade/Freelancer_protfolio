@@ -391,13 +391,22 @@ const Home = () => {
               Your Questions<br />
               <span className="text-gradient">Answered</span>
             </h2>
+            <p className="section-description">
+              Everything you need to know about our services and process
+            </p>
           </div>
 
           <div className="faq-grid">
             {faqs.map((faq, index) => (
               <div key={index} className="faq-item">
-                <h4 className="faq-question">{faq.question}</h4>
-                <p className="faq-answer">{faq.answer}</p>
+                <div className="faq-number">{String(index + 1).padStart(2, '0')}</div>
+                <div className="faq-content">
+                  <h4 className="faq-question">
+                    <FiCheck className="faq-icon" />
+                    {faq.question}
+                  </h4>
+                  <p className="faq-answer">{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
