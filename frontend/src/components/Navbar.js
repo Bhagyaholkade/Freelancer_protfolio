@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -24,14 +23,14 @@ const Navbar = () => {
 
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
-            <Link
+            <NavLink
               key={link.path}
               to={link.path}
-              className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
               onClick={() => setIsOpen(false)}
             >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
           <Link to="/contact" className="btn btn-primary nav-cta" onClick={() => setIsOpen(false)}>
             Get Started
