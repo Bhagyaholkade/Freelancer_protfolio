@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FiStar, FiChevronLeft, FiChevronRight, FiMessageSquare } from 'react-icons/fi';
-import { testimonialService } from '../services/api';
+
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);
@@ -62,25 +62,9 @@ const Testimonials = () => {
   ];
 
   useEffect(() => {
-    fetchTestimonials();
+    setTestimonials(sampleTestimonials);
+    setLoading(false);
   }, []);
-
-  const fetchTestimonials = async () => {
-    try {
-      setLoading(true);
-      const response = await testimonialService.getAll({ featured: true });
-      if (response.data && response.data.length > 0) {
-        setTestimonials(response.data);
-      } else {
-        setTestimonials(sampleTestimonials);
-      }
-    } catch (error) {
-      console.error('Error fetching testimonials:', error);
-      setTestimonials(sampleTestimonials);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const displayTestimonials = testimonials.length > 0 ? testimonials : sampleTestimonials;
 

@@ -5,7 +5,7 @@ import {
   FiCode, FiCpu, FiLayout, FiDatabase, FiSmartphone, FiBook,
   FiLayers, FiStar
 } from 'react-icons/fi';
-import { projectService } from '../services/api';
+import { projectsData, projectCategories } from '../data/projectsData';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
@@ -35,26 +35,16 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    fetchProjects();
+    // Simulate loading for effect
+    setTimeout(() => {
+      setProjects(projectsData);
+      setLoading(false);
+    }, 500);
   }, []);
 
   useEffect(() => {
     filterProjects();
   }, [activeCategory, searchQuery, projects]);
-
-  const fetchProjects = async () => {
-    try {
-      setLoading(true);
-      const response = await projectService.getAll();
-      setProjects(response.data || []);
-    } catch (error) {
-      console.error('Error fetching projects:', error);
-      // Use sample data if API fails
-      setProjects(sampleProjects);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const filterProjects = () => {
     let filtered = [...projects];
@@ -75,84 +65,7 @@ const Projects = () => {
     setFilteredProjects(filtered);
   };
 
-  // Sample projects for display when API is not available
-  const sampleProjects = [
-    {
-      id: 1,
-      title: 'E-Commerce Platform',
-      slug: 'e-commerce-platform',
-      shortDescription: 'A full-featured online shopping platform with cart, payments, and admin dashboard.',
-      category: 'fullstack',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
-      imageUrl: null,
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
-    },
-    {
-      id: 2,
-      title: 'AI Image Classifier',
-      slug: 'ai-image-classifier',
-      shortDescription: 'Deep learning model for image classification with 95% accuracy on custom dataset.',
-      category: 'aiml',
-      technologies: ['Python', 'TensorFlow', 'Flask', 'React'],
-      imageUrl: null,
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
-    },
-    {
-      id: 3,
-      title: 'Student Management System',
-      slug: 'student-management-system',
-      shortDescription: 'Complete academic project for managing student records, grades, and attendance.',
-      category: 'academic',
-      technologies: ['React', 'Express', 'MongoDB', 'JWT'],
-      imageUrl: null,
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: true
-    },
-    {
-      id: 4,
-      title: 'Real-time Chat Application',
-      slug: 'realtime-chat-app',
-      shortDescription: 'WebSocket-based chat application with private messaging and group chats.',
-      category: 'fullstack',
-      technologies: ['React', 'Socket.io', 'Node.js', 'Redis'],
-      imageUrl: null,
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'Sentiment Analysis Tool',
-      slug: 'sentiment-analysis-tool',
-      shortDescription: 'NLP-powered tool for analyzing sentiment in social media posts and reviews.',
-      category: 'aiml',
-      technologies: ['Python', 'NLTK', 'Scikit-learn', 'FastAPI'],
-      imageUrl: null,
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Portfolio Dashboard',
-      slug: 'portfolio-dashboard',
-      shortDescription: 'Interactive dashboard for tracking investments with real-time data visualization.',
-      category: 'frontend',
-      technologies: ['React', 'Chart.js', 'Tailwind CSS', 'API Integration'],
-      imageUrl: null,
-      liveUrl: '#',
-      githubUrl: '#',
-      featured: false
-    }
-  ];
-
-  const displayProjects = filteredProjects.length > 0 ? filteredProjects :
-    (loading ? [] : (projects.length === 0 ? sampleProjects : []));
+  const displayProjects = filteredProjects;
 
   return (
     <div className="projects-page">
