@@ -57,7 +57,7 @@ const About = () => {
     },
     {
       year: '2024',
-      title: 'DevBuild Launch',
+      title: 'KBytes Launch',
       description: 'Officially launched as a professional freelancing platform.'
     },
     {
@@ -123,7 +123,7 @@ const About = () => {
                 <span className="text-gradient">Learning and Implementation</span>
               </h2>
               <p>
-                We started DevBuild with a simple observation: many talented students
+                We started KBytes with a simple observation: many talented students
                 struggle to build major projects, understand end-to-end development,
                 or gain real project experience.
               </p>
@@ -231,7 +231,7 @@ const About = () => {
           <div className="why-choose-wrapper">
             <div className="why-choose-content">
               <span className="section-eyebrow">
-                <FiAward /> Why DevBuild
+                <FiAward /> Why KBytes
               </span>
               <h2 className="section-title">
                 More Than Just <span className="text-gradient">Code Delivery</span>

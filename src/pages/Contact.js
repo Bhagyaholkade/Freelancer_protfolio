@@ -62,8 +62,8 @@ const Contact = () => {
     {
       icon: <FiMail />,
       title: 'Email Us',
-      content: 'contact@devbuild.com',
-      link: 'mailto:contact@devbuild.com'
+      content: 'contact@KBytes.com',
+      link: 'mailto:contact@KBytes.com'
     },
     {
       icon: <FiPhone />,

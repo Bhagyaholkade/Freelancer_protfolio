@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="footer-brand">
             <Link to="/" className="logo">
               <span className="logo-icon">{'</>'}</span>
-              <span className="logo-text">DevBuild</span>
+              <span className="logo-text">KBytes</span>
             </Link>
             <p className="footer-tagline">
               Building real projects. Creating real experience.
@@ -26,7 +26,7 @@ const Footer = () => {
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                 <FiTwitter />
               </a>
-              <a href="mailto:contact@devbuild.com" aria-label="Email">
+              <a href="mailto:contact@KBytes.com" aria-label="Email">
                 <FiMail />
               </a>
             </div>
@@ -55,7 +55,7 @@ const Footer = () => {
           <div className="footer-links">
             <h4>Contact</h4>
             <ul>
-              <li>contact@devbuild.com</li>
+              <li>contact@KBytes.com</li>
               <li>+91 98765 43210</li>
               <li>Available 24/7</li>
             </ul>
@@ -63,7 +63,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {currentYear} DevBuild. All rights reserved.</p>
+          <p>&copy; {currentYear} KBytes. All rights reserved.</p>
           <p>Built with passion for developers.</p>
         </div>
       </div>

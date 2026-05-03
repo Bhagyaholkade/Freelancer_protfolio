@@ -18,7 +18,7 @@ const Navbar = () => {
       <div className="container navbar-container">
         <Link to="/" className="logo">
           <span className="logo-icon">{'</>'}</span>
-          <span className="logo-text">DevBuild</span>
+          <span className="logo-text">KBytes</span>
         </Link>
 
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>

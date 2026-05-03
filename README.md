@@ -1,4 +1,4 @@
-# DevBuild - Professional Freelancer Portfolio Website
+# KBytes - Professional Freelancer Portfolio Website
 
 A modern, full-stack freelancing portfolio website built with React, Node.js, Express, and PostgreSQL. Features a unique design with glassmorphism effects, smooth animations, and professional UI/UX.
 
@@ -34,7 +34,7 @@ A modern, full-stack freelancing portfolio website built with React, Node.js, Ex
 ## Project Structure
 
 ```
-devbuild-portfolio/
+KBytes-portfolio/
 ├── backend/
 │   ├── config/
 │   │   └── database.js          # Database connection
