@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -14,7 +21,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <Link to="/" className="logo">
           <span className="logo-icon">{'</>'}</span>
@@ -33,11 +40,15 @@ const Navbar = () => {
             </NavLink>
           ))}
           <Link to="/contact" className="btn btn-primary nav-cta" onClick={() => setIsOpen(false)}>
-            Get Started
+            Book a Call
           </Link>
         </div>
 
-        <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          className="menu-toggle"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+        >
           {isOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>

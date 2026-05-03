@@ -1,72 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FiStar, FiChevronLeft, FiChevronRight, FiMessageSquare } from 'react-icons/fi';
 
+// TODO: Replace these with real testimonials from actual clients before launch
+const TESTIMONIALS = [
+  { id: 1, name: 'Rahul Sharma', role: 'Computer Science Student', company: 'VTU, Bengaluru', content: 'Excellent code quality and clear explanations. Helped me ace my final year project presentation!', rating: 5, avatarUrl: null, projectType: 'academic' },
+  { id: 2, name: 'Priya Patel', role: 'Startup Founder', company: 'TechStart', content: 'Delivered a fully functional MVP that impressed our investors. Professional and responsive!', rating: 5, avatarUrl: null, projectType: 'fullstack' },
+  { id: 3, name: 'Arjun Mehta', role: 'Data Science Student', company: 'PES University', content: 'Beyond expectations! They helped me understand the algorithms and got me the highest grade.', rating: 5, avatarUrl: null, projectType: 'aiml' },
+  { id: 4, name: 'Sneha Reddy', role: 'Freelance Developer', company: 'Self-employed', content: 'Clean, well-documented code that integrated seamlessly. Will definitely work with them again!', rating: 5, avatarUrl: null, projectType: 'backend' },
+  { id: 5, name: 'Vikram Singh', role: 'Small Business Owner', company: 'Bengaluru', content: 'Got my business website up in 2 weeks exactly as promised. Customer inquiries have gone up noticeably!', rating: 5, avatarUrl: null, projectType: 'fullstack' }
+];
 
 const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(true);
 
-  // Sample testimonials
-  const sampleTestimonials = [
-    {
-      id: 1,
-      name: 'Rahul Sharma',
-      role: 'Computer Science Student',
-      company: 'IIT Delhi',
-      content: 'Excellent code quality and clear explanations. Helped me ace my final year project presentation!',
-      rating: 5,
-      avatarUrl: null,
-      projectType: 'academic'
-    },
-    {
-      id: 2,
-      name: 'Priya Patel',
-      role: 'Startup Founder',
-      company: 'TechStart',
-      content: 'Delivered a fully functional MVP that impressed our investors. Professional and responsive!',
-      rating: 5,
-      avatarUrl: null,
-      projectType: 'fullstack'
-    },
-    {
-      id: 3,
-      name: 'Arjun Mehta',
-      role: 'Data Science Student',
-      company: 'BITS Pilani',
-      content: 'Beyond expectations! They helped me understand the algorithms and got me the highest grade.',
-      rating: 5,
-      avatarUrl: null,
-      projectType: 'aiml'
-    },
-    {
-      id: 4,
-      name: 'Sneha Reddy',
-      role: 'Freelance Developer',
-      company: 'Self-employed',
-      content: 'Clean, well-documented code that integrated seamlessly. Will definitely work with them again!',
-      rating: 5,
-      avatarUrl: null,
-      projectType: 'backend'
-    },
-    {
-      id: 5,
-      name: 'Vikram Singh',
-      role: 'MBA Student',
-      company: 'ISB Hyderabad',
-      content: 'Created an interactive dashboard that made my thesis presentation a huge success!',
-      rating: 5,
-      avatarUrl: null,
-      projectType: 'frontend'
-    }
-  ];
-
-  useEffect(() => {
-    setTestimonials(sampleTestimonials);
-    setLoading(false);
-  }, []);
-
-  const displayTestimonials = testimonials.length > 0 ? testimonials : sampleTestimonials;
+  const displayTestimonials = TESTIMONIALS;
 
   const nextTestimonial = () => {
     setCurrentIndex((prev) =>
@@ -96,19 +43,6 @@ const Testimonials = () => {
       .join('')
       .toUpperCase();
   };
-
-  if (loading) {
-    return (
-      <section className="testimonials-section">
-        <div className="container">
-          <div className="loading-state">
-            <div className="loading-spinner"></div>
-            <p>Loading testimonials...</p>
-          </div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="testimonials-section">

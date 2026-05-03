@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KBytes — New Project Inquiry</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f4f5;font-family:'Segoe UI',Arial,sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f5;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;width:100%;">
+
+          <!-- ── HEADER ── -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#ff4d4d 0%,#f97316 100%);border-radius:12px 12px 0 0;padding:28px 40px;text-align:center;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td align="center">
+                    <div style="display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:8px;padding:6px 14px;font-size:13px;font-weight:700;color:#ffffff;letter-spacing:2px;margin-bottom:10px;">
+                      &lt;/&gt; KBytes
+                    </div>
+                    <h1 style="margin:8px 0 0;color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.3px;">
+                      🔔 New Project Inquiry
+                    </h1>
+                    <p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:13px;">
+                      Someone just filled out your contact form
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ── BODY ── -->
+          <tr>
+            <td style="background:#ffffff;padding:36px 40px;">
+
+              <!-- Greeting -->
+              <p style="margin:0 0 24px;font-size:15px;color:#374151;line-height:1.6;">
+                Hey Kiran &amp; Bhagya 👋<br/>
+                A new inquiry just came in from <strong style="color:#111827;">{{from_name}}</strong>. Here are the full details:
+              </p>
+
+              <!-- ── CLIENT DETAILS CARD ── -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                     style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;margin-bottom:24px;overflow:hidden;">
+                <tr>
+                  <td style="padding:20px 24px;border-bottom:1px solid #e5e7eb;">
+                    <p style="margin:0 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;font-weight:600;">Client Name</p>
+                    <p style="margin:0;font-size:16px;font-weight:700;color:#111827;">{{from_name}}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:16px 24px;border-bottom:1px solid #e5e7eb;">
+                    <p style="margin:0 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;font-weight:600;">Email Address</p>
+                    <a href="mailto:{{reply_to}}" style="margin:0;font-size:15px;color:#ff4d4d;text-decoration:none;font-weight:500;">{{reply_to}}</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:16px 24px;border-bottom:1px solid #e5e7eb;">
+                    <p style="margin:0 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;font-weight:600;">Phone / WhatsApp</p>
+                    <p style="margin:0;font-size:15px;color:#374151;font-weight:500;">{{phone}}</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:16px 24px;">
+                    <p style="margin:0 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;font-weight:600;">Project Type</p>
+                    <span style="display:inline-block;background:#fff0f0;border:1px solid #fca5a5;border-radius:999px;padding:4px 14px;font-size:13px;font-weight:600;color:#dc2626;">
+                      {{project_type}}
+                    </span>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- ── MESSAGE ── -->
+              <p style="margin:0 0 10px;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:#9ca3af;font-weight:600;">
+                Message / Project Details
+              </p>
+              <div style="background:#f9fafb;border-left:4px solid #ff4d4d;border-radius:0 8px 8px 0;padding:18px 20px;margin-bottom:28px;">
+                <p style="margin:0;font-size:15px;color:#374151;line-height:1.75;white-space:pre-wrap;">{{message}}</p>
+              </div>
+
+              <!-- ── CTA ── -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+                <tr>
+                  <td align="center" style="padding:4px 0 12px;">
+                    <p style="margin:0 0 16px;font-size:14px;color:#6b7280;text-align:center;">
+                      Reply within <strong>24 hours</strong> to lock in this lead 🚀
+                    </p>
+                    <a href="mailto:{{reply_to}}?subject=Re: Your Project Inquiry — KBytes&body=Hi {{from_name}},%0A%0AThank you for reaching out to KBytes!%0A%0A"
+                       style="display:inline-block;background:linear-gradient(135deg,#ff4d4d 0%,#f97316 100%);color:#ffffff;text-decoration:none;font-size:15px;font-weight:700;padding:14px 36px;border-radius:8px;letter-spacing:-0.2px;">
+                      ✉️ Reply to {{from_name}}
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- ── QUICK STATS REMINDER ── -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                     style="background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:0;margin-bottom:8px;">
+                <tr>
+                  <td style="padding:16px 24px;">
+                    <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#92400e;">💡 Quick Response Tip</p>
+                    <p style="margin:0;font-size:13px;color:#78350f;line-height:1.5;">
+                      Clients who get a reply within 1 hour are <strong>7x more likely to convert</strong>.
+                      If you can't call, send a WhatsApp first!
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- ── FOOTER ── -->
+          <tr>
+            <td style="background:#111827;border-radius:0 0 12px 12px;padding:24px 40px;text-align:center;">
+              <p style="margin:0 0 6px;font-size:13px;font-weight:700;color:#ffffff;">
+                &lt;/&gt; KBytes — Bengaluru, India
+              </p>
+              <p style="margin:0;font-size:12px;color:#6b7280;">
+                This email was triggered by your KBytes contact form · 
+                <a href="https://kbytes.dev" style="color:#ff4d4d;text-decoration:none;">kbytes.dev</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

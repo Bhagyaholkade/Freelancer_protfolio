@@ -35,11 +35,8 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    // Simulate loading for effect
-    setTimeout(() => {
-      setProjects(projectsData);
-      setLoading(false);
-    }, 500);
+    setProjects(projectsData);
+    setLoading(false);
   }, []);
 
   useEffect(() => {

@@ -1,24 +1,24 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  FiCode, FiArrowRight, FiCheck,
+  FiArrowRight, FiCheck,
   FiZap, FiShield, FiUsers,
-  FiTrendingUp, FiAward, FiPlay,
+  FiTrendingUp, FiAward,
   FiCheckCircle
 } from 'react-icons/fi';
-import { SiGoogle, SiLinkedin } from 'react-icons/si';
 import Testimonials from '../components/Testimonials';
 import { services, stats, results, pricingPlans, faqs } from '../data/homeData';
+
+// Defined outside component — prevents new array reference on every render
+const TYPING_WORDS = ['Web Apps', 'AI Products', 'SaaS Tools', 'Mobile Apps', 'Ecommerce Stores'];
 
 const Home = () => {
   const [typedText, setTypedText] = useState('');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const words = ['Full Stack Apps', 'AI/ML Models', 'Web Platforms', 'Mobile Apps', 'Academic Projects'];
-
   useEffect(() => {
-    const currentWord = words[currentWordIndex];
+    const currentWord = TYPING_WORDS[currentWordIndex];
     const typeSpeed = isDeleting ? 50 : 100;
 
     const timeout = setTimeout(() => {
@@ -31,13 +31,13 @@ const Home = () => {
         setTypedText(currentWord.substring(0, typedText.length - 1));
         if (typedText === '') {
           setIsDeleting(false);
-          setCurrentWordIndex((prev) => (prev + 1) % words.length);
+          setCurrentWordIndex((prev) => (prev + 1) % TYPING_WORDS.length);
         }
       }
     }, typeSpeed);
 
     return () => clearTimeout(timeout);
-  }, [typedText, isDeleting, currentWordIndex, words]);
+  }, [typedText, isDeleting, currentWordIndex]); // words array moved outside — no longer a dep
 
   return (
     <div className="home">
@@ -97,49 +97,51 @@ const Home = () => {
           <div className="hero-content-dark">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot"></span>
-              Now accepting new projects
+              ✅ Accepting 2 new clients this month · Bengaluru, India
             </div>
 
             <h1 className="hero-title-dark">
-              <span className="line">We Build Real</span>
+              <span className="line">We Build Websites &amp; </span>
               <span className="line">
                 <span className="highlight">{typedText}</span>
                 <span className="cursor">|</span>
               </span>
+              <span className="line">That Grow Your Business</span>
             </h1>
 
             <p className="hero-description-dark">
-              We help students and developers build 100% working Full Stack and AI projects
-              with hands-on guidance and real-world implementation. From concept to deployment.
+              Kiran &amp; Bhagya — full-stack engineers from Bengaluru. We've shipped 50+ projects
+              for startups, SMBs, and students. From landing pages to custom AI chatbots.
+              <strong> No demos. No excuses. Just shipping.</strong>
             </p>
 
             <div className="hero-cta-dark">
               <Link to="/contact" className="btn btn-primary btn-lg">
-                Start Your Project
+                Get a Free Quote
                 <FiArrowRight className="btn-icon" />
               </Link>
-              <button className="btn btn-secondary btn-lg">
-                <FiPlay style={{ marginRight: '8px' }} />
-                Watch Demo
-              </button>
+              <Link to="/projects" className="btn btn-secondary btn-lg">
+                See Our Work
+                <FiArrowRight className="btn-icon" />
+              </Link>
             </div>
 
             <div className="trust-badges">
               <div className="trust-badge">
-                <SiGoogle />
-                <span className="trust-badge-text">Google</span>
-              </div>
-              <div className="trust-badge">
-                <FiCode />
-                <span className="trust-badge-text">GitHub</span>
-              </div>
-              <div className="trust-badge">
-                <SiLinkedin />
-                <span className="trust-badge-text">LinkedIn</span>
-              </div>
-              <div className="trust-badge">
                 <FiAward />
-                <span className="trust-badge-text">Certified</span>
+                <span className="trust-badge-text">⭐ 4.9 Rated</span>
+              </div>
+              <div className="trust-badge">
+                <FiCheckCircle />
+                <span className="trust-badge-text">50+ Projects Shipped</span>
+              </div>
+              <div className="trust-badge">
+                <FiUsers />
+                <span className="trust-badge-text">Bengaluru, India</span>
+              </div>
+              <div className="trust-badge">
+                <FiZap />
+                <span className="trust-badge-text">24hr Response</span>
               </div>
             </div>
           </div>
